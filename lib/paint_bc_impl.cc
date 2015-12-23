@@ -74,10 +74,10 @@ namespace gr {
             {
                 sinc = sin(x) / x;
             }
-            inverse_sinc[i + (ofdm_fft_size / 2)].real() = 1.0 / sinc;
-            inverse_sinc[i + (ofdm_fft_size / 2)].imag() = 0.0;
-            inverse_sinc[(ofdm_fft_size / 2) - i - 1].real() = 1.0 / sinc;
-            inverse_sinc[(ofdm_fft_size / 2) - i - 1].imag() = 0.0;
+            inverse_sinc[i + (ofdm_fft_size / 2)].real(1.0 / sinc);
+            inverse_sinc[i + (ofdm_fft_size / 2)].imag(0.0);
+            inverse_sinc[(ofdm_fft_size / 2) - i - 1].real(1.0 / sinc);
+            inverse_sinc[(ofdm_fft_size / 2) - i - 1].imag(0.0);
             f = f + fstep;
         }
         set_output_multiple(ofdm_fft_size * line_repeat);
